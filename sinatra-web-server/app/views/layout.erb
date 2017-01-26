@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Constellation</title>
+
+  <link rel="stylesheet" href="/stylesheets/normalize.css">
+  <link rel="stylesheet" href="/stylesheets/application.css">
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: background-color: rgba(0,0,0,0);;
+      font: 11px courier;
+      overflow: hidden;
+    }
+    #graph-info {
+      position: absolute;
+      top: 0px;
+      left: 40%;
+      margin: 10px;
+      background-color: white;
+      color: #333;
+      padding: 5px 10px;
+    }
+    #options {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+    }
+  </style>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascript/application.js"></script>
+  <script type="text/javascript" src="/javascript/Graph.js"></script>
+  <script type="text/javascript" src="/javascript/webgl-frameworks/three.min.js"></script>
+  <script type="text/javascript" src="/javascript/utils/Stats.js"></script>
+  <script type="text/javascript" src="/javascript/utils/TrackballControls.js"></script>
+  <script type="text/javascript" src="/javascript/utils/Label.js"></script>
+  <script type="text/javascript" src="/javascript/utils/ObjectSelection.js"></script>
+  <script type="text/javascript" src="/javascript/layouts/force-directed-layout.js"></script>
+  <script type="text/javascript" src="/javascript/webgl-frameworks/cube_map.js"></script>
+  <script type="text/javascript" src="/javascript/drawings/simple_graph.js"></script>
+  <script type="text/javascript" src="/javascript/drawings/sphere_graph.js"></script>
+  <script type="text/javascript">
+    var drawing;
+    function createDrawing() {
+      drawing = new Drawing.SimpleGraph({
+        layout: '3d',
+        selection: true,
+        numNodes: 50,
+        graphLayout: { attraction: 10, repulsion: 1, nodePhysics: false },
+        showStats: false,
+        showInfo: true,
+        params: {
+          host: "<%= @args[:host] %>",
+          db: "<%= @args[:db] %>",
+          user: "<%= @args[:user] %>",
+          password: "<%= @args[:password] %>",
+          port: <%= @args[:port] %>,
+          ssl: <%= @args[:ssl] %>
+        }
+      });
+    }
+  </script>
+
+</head>
+<body onload="createDrawing()">
+  <%= yield %>
+</body>
+</html>

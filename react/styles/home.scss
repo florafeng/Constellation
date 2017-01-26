@@ -1,0 +1,94 @@
+body {
+	font-family: 'avenir';
+	color: white;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	background-color: black;
+}
+
+.about {
+	margin: 20px;
+	border: 1px solid white;
+}
+
+.about p {
+	text-align: left;
+	font-size: 1.25em;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.backgroundImg {
+	background: url(http://localhost:4000/build/background.jpg);
+	height: 800px;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	//background-attachment: fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	display: block;
+}
+
+ul {
+	position: absolute;
+	right: 30px;
+}
+
+.myContainer {
+  // max-width: 960px;
+  margin: 0 auto;
+}
+
+h1.brand-glow{
+	color: white;
+	text-shadow: 0px 0px 30px rgba(255,255,255, 0.8);
+	font-family: 'avenir';
+	margin-top: 100px;
+}
+
+.modal-content {
+	color: black;
+}
+
+.footer {
+	display: block;
+	background-color: black;
+	height: 230px;
+	bottom: 0px;
+	color: lightgrey;
+}
+
+.footer > div > p {
+	font-size: 1.5em;
+}
+
+.thanks {
+	height: 400px;
+}
+
+.team-card {
+	width: 100%;
+}
+
+// .card {
+// 	display: inline;
+// 	float: left;
+// 	background-color: #212121;
+// 	width: 30%;
+// 	margin-left: 20px;
+// 	margin-right: 20px;
+// }
+
+h1,h2 {
+	margin-top: 100px;
+}
+
+.myContainer p {
+	font-size: 1.5em;
+}
+
+.about {
+	padding: 20px;
+}
